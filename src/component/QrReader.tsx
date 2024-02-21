@@ -10,7 +10,7 @@ const MyQrReader = () => {
     return (
         <div className="w-[200px] h-[200px]" style={{width: 400, height: 400}} >
             <QrReader
-                constraints={{}}
+                constraints={{ facingMode: { exact: "environment" } }}
                 onResult={(result, error) => {
                     if (!!result) {
                         setData(result);
@@ -20,7 +20,7 @@ const MyQrReader = () => {
                         console.info(error);
                     }
                 }}
-                
+                scanDelay={500}
             />
         </div>
     );
